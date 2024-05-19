@@ -1,5 +1,5 @@
 import './App.scss'
-import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage'
@@ -12,13 +12,13 @@ const App = ({hasError = false}) => {
         <header className='bg-primary'> 
           <Navbar expand="lg" className="bg-body-primary border-bottom" variant='dark'>
             <Container>
-              <Navbar.Brand href="/" className=''><img src='/logo.png' className='me-2' /> Transformations</Navbar.Brand>
+              <Navbar.Brand href="/" className=''><img src={`${import.meta.env.BASE_URL}logo.png`} className='me-2' /> Transformations</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                  <Nav.Link as={NavLink} to="/about">About us</Nav.Link>
-                  <Nav.Link as={NavLink} to="/about/team">Our team</Nav.Link>
-                  <Nav.Link as={NavLink} to="/coaching">Coaching</Nav.Link>
+                  <Nav.Link as={NavLink} to={`${import.meta.env.BASE_URL}about`}>About us</Nav.Link>
+                  <Nav.Link as={NavLink} to={`${import.meta.env.BASE_URL}about/team`}>Our team</Nav.Link>
+                  <Nav.Link as={NavLink} to={`${import.meta.env.BASE_URL}coaching`}>Coaching</Nav.Link>
                   {/* <NavDropdown title="About us" id="basic-nav-dropdown">
                     <NavDropdown.Item as={NavLink} to="/about">About us</NavDropdown.Item>
                     <NavDropdown.Item as={NavLink} to="/about/our-team">

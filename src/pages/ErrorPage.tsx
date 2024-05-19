@@ -1,14 +1,14 @@
 import { ErrorResponse, useRouteError } from "react-router-dom"
 
 const ErrorPage = () => {
-  const error = useRouteError() as ErrorResponse | Error
+  const error = useRouteError() as ErrorResponse //| Error
 
   return <div id="Error" className='Error container'>
   <h1>Oops!!</h1>
   <p>Sorry, an unexpected error has occurred.</p>
   <p>
     {error.status}
-    <i>{error.statusText} {error.message}</i>
+    <i>{error.statusText} {/* error.message */}</i>
   </p>
 </div> 
 }
