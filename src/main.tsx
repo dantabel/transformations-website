@@ -2,15 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.scss'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 import Home from './pages/Home.tsx'
 import AboutUs from './pages/AboutUs.tsx'
 import Coaching from './pages/Coaching.tsx'
 import OurTeam from './pages/OurTeam.tsx'
 
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: import.meta.env.BASE_URL,
+    path: '/', //import.meta.env.BASE_URL,
     element: <App />,
     errorElement: <App hasError={true} />,
     children: [
